@@ -1,0 +1,47 @@
+/* Pyramid Pattern of Stars
+
+        *
+       ***
+      *****
+     *******
+    *********
+
+*/
+
+#include <iostream>
+using namespace std;
+
+
+void printSpaces(int spaces) {
+    if (spaces == 0) {
+        return;
+    }
+    cout << " ";
+    printSpaces(spaces - 1);
+}
+
+
+void printStars(int stars) {
+    if (stars == 0) {
+        return;
+    }
+    cout << "*";
+    printStars(stars - 1);
+}
+
+
+void printPattern(int n, int row = 1) {
+    if (row > n) {
+        return;
+    }
+    printSpaces(n - row);
+    printStars(2 * row - 1);
+    cout << endl;
+    printPattern(n, row + 1);
+}
+
+int main() {
+    int n = 5; 
+    printPattern(n);
+    return 0;
+}
