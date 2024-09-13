@@ -1,0 +1,40 @@
+/* Recursive function for star pattern
+
+
+*
+**.
+***
+****
+*****
+
+
+
+
+*/
+
+#include <iostream>
+using namespace std;
+
+void printStars(int stars) {
+    if (stars == 0) {
+        return;
+    }
+    cout << "*";
+    printStars(stars - 1);
+}
+
+void printPattern(int n) {
+    if (n == 0) {
+        return;
+    }
+    printPattern(n - 1);
+    printStars(n);
+    cout << endl;
+}
+
+int main() {
+    int n = 5;
+    printPattern(n);
+    return 0;
+}
+
